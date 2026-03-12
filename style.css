@@ -1,0 +1,77 @@
+/* ==============================
+   Base & Reset
+============================== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body, html { font-family: 'Segoe UI', sans-serif; transition:0.3s; }
+input, button { font-family: inherit; outline:none; }
+
+/* ==============================
+   Login/Register Page
+============================== */
+body.login-body { background: #f0f8ff; display:flex; justify-content:center; align-items:center; height:100vh; }
+.login-container { background:#fff; padding:30px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.2); text-align:center; width:90%; max-width:400px; }
+.login-container input { width:90%; padding:10px; margin:10px 0; border-radius:8px; border:1px solid #ccc; }
+.login-container button { padding:10px 20px; border:none; background:#007bff; color:white; border-radius:8px; cursor:pointer; margin-top:10px; }
+.login-container button:hover { background:#0056b3; }
+.login-container p span { color:#007bff; cursor:pointer; }
+
+/* ==============================
+   Header
+============================== */
+header { background:#007bff; color:white; padding:15px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; box-shadow:0 4px 10px rgba(0,0,0,0.2); position:sticky; top:0; z-index:100; }
+header h1 { margin:0; font-size:1.8rem; }
+header input { padding:8px; border-radius:8px; border:none; margin-right:10px; flex:1; min-width:150px; }
+header button { padding:8px 12px; margin-left:5px; border:none; border-radius:8px; cursor:pointer; }
+
+/* ==============================
+   Book Container & Items
+============================== */
+.book-container { display:grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap:20px; padding:20px; }
+.book { background:#f0f8ff; padding:10px; border-radius:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s; }
+.book:hover { transform: translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.25); }
+.book img { width:100%; border-radius:10px; }
+.book h3 { margin:5px 0; color:#007bff; font-size:1.1rem; }
+.book p { font-size:0.9rem; color:#333; }
+.book button { margin-top:5px; padding:5px 10px; background:#007bff; color:white; border:none; border-radius:5px; cursor:pointer; }
+.book button:hover { background:#0056b3; }
+
+/* ==============================
+   Cart Drawer / Cart Page
+============================== */
+.cart-drawer, .cart-item { display:none; } /* hidden in this version */
+.cart-item { display:flex; justify-content:space-between; margin:10px 0; align-items:center; }
+.cart-item button { background:transparent; color:red; border:none; font-size:1.1rem; }
+.primary-btn { width:100%; margin:10px 0; padding:8px 12px; border-radius:8px; border:none; background:#28a745; color:white; cursor:pointer; }
+.primary-btn:hover { background:#1e7e34; }
+
+/* ==============================
+   Checkout Modal / Page
+============================== */
+.modal { display:none; }
+.modal-content { background:white; padding:20px; border-radius:10px; width:90%; max-width:400px; text-align:center; }
+.modal-content input { margin:5px 0; padding:8px; width:95%; border-radius:8px; border:1px solid #ccc; }
+
+/* ==============================
+   Dark Mode
+============================== */
+body.dark { background:#121212; color:white; }
+body.dark header { background:#333; color:white; }
+body.dark .book { background:#1e1e1e; color:#e0e0e0; }
+body.dark .book p { color:#ccc; }
+body.dark input { background:#333; color:#fff; border:1px solid #555; }
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width:600px){
+  header { flex-direction:column; align-items:flex-start; }
+  header input { margin:10px 0; width:100%; }
+  .book img { height:150px; }
+}
+/* ==============================
+   Progress Bar
+============================== */
+.progress-bar-container { position:relative; display:flex; justify-content:space-between; margin:20px auto; width:90%; max-width:400px; }
+.progress-step { width:30%; text-align:center; padding:10px 5px; border-radius:8px; background:#ccc; color:#fff; position:relative; z-index:2; transition:0.5s; }
+.progress-step.active { background:#28a745; }
+.progress-line { position:absolute; top:50%; left:0; width:0; height:6px; background:#28a745; z-index:1; border-radius:3px; transition:0.5s; }

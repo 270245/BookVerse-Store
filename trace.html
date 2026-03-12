@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BookVerse - Trace Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>📦 Trace Your Order</h1>
+  <button onclick="window.location.href='bookstore.html'">← Back to Store</button>
+</header>
+
+<div class="login-container" id="traceContainer">
+  <h3>No current order</h3>
+</div>
+
+<!-- Progress Bar -->
+<div id="progressBarContainer" class="progress-bar-container" style="display:none;">
+  <div class="progress-step" id="step1">Processing</div>
+  <div class="progress-step" id="step2">Shipping</div>
+  <div class="progress-step" id="step3">Delivered</div>
+  <div class="progress-line" id="progressLine"></div>
+</div>
+
+<script src="trace.js"></script>
+</body>
+</html>

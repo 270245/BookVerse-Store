@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BookVerse Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>📚 BookVerse</h1>
+
+  <input type="text" id="search" placeholder="Search books..." onkeyup="searchBooks()">
+
+  <div class="header-buttons">
+    <button onclick="toggleDark()">🌙</button>
+    <button onclick="window.location.href='cart.html'">🛒 <span id="cartCount">0</span></button>
+    <button onclick="window.location.href='trace.html'">📦 Trace Order</button>
+  </div>
+</header>
+
+<div id="message"></div>
+<div id="books" class="book-container"></div>
+
+<script src="books.json" type="application/json"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BookVerse Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <h1>📚 BookVerse</h1>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p>Don't have an account? <span onclick="register()">Register</span></p>
+  </div>
+
+  <script>
+    function login() {
+      let username = document.getElementById('username').value;
+      let password = document.getElementById('password').value;
+      if(!username || !password){
+        alert('Enter username and password');
+        return;
+      }
+      // Simple login simulation using localStorage
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      let user = users.find(u => u.username === username && u.password === password);
+      if(user){
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        window.location.href = 'bookstore.html';
+      } else {
+        alert('Invalid credentials');
+      }
+    }
+
+    function register() {
+      let username = prompt("Enter username:");
+      let password = prompt("Enter password:");
+      if(!username || !password) return;
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      users.push({username, password});
+      localStorage.setItem('users', JSON.stringify(users));
+      alert('Account created! You can now login.');
+    }
+  </script>
+</body>
+</html>
